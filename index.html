@@ -1,81 +1,199 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <title>Hsiang Chen | Data Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人介紹</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0e1117;
+    color: white;
+    display: flex;
+}
+
+/* 左側導覽 */
+.sidebar {
+    width: 220px;
+    background: #111827;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+}
+
+.sidebar h3 {
+    margin-bottom: 15px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 10px;
+    margin: 6px 0;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.sidebar a:hover {
+    background: #1f2937;
+}
+
+/* 主內容 */
+.content {
+    margin-left: 240px;
+    padding: 40px;
+    max-width: 900px;
+}
+
+/* 圖片 */
+.profile {
+    width: 200px;
+    border-radius: 12px;
+}
+
+/* 分隔線 */
+hr {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 25px 0;
+}
+
+/* tag */
+.tag {
+    display: inline-block;
+    background: #1f2937;
+    padding: 6px 10px;
+    margin: 4px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+/* card */
+.card {
+    background: #161b22;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+</style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Data Engineer Portfolio</a>
-        </div>
-    </nav>
 
-    <header class="py-5 text-center bg-light">
-        <div class="container">
-            <h1 class="display-4">Hsiang Chen</h1>
-            <p class="lead">數據工程與商業智慧 (BI) 專家</p>
-            <p>擅長將原始數據轉化為戰略性業務資產</p>
-        </div>
-    </header>
+<!-- ================= 左側導覽 ================= -->
+<div class="sidebar">
+    <h3>導覽</h3>
+    <a href="index.html">個人介紹</a>
+    <a href="education.html">學歷</a>
+    <a href="experience.html">經歷</a>
+    <a href="skills.html">技能</a>
+</div>
 
-    <section class="container my-5">
-        <h2 class="text-center mb-4">專業技能</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 p-3 shadow-sm">
-                    <h3>⚙️ 資料工程</h3>
-                    <ul>
-                        <li>SQL Server 高效存取與安全管理</li>
-                        <li>建構數據管道 (Data Pipelines)</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 p-3 shadow-sm">
-                    <h3>📊 商業智慧</h3>
-                    <ul>
-                        <li>Power BI 視覺化儀表板</li>
-                        <li>DAX 建模與維度分析</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 p-3 shadow-sm">
-                    <h3>🐍 自動化分析</h3>
-                    <ul>
-                        <li>Python 自動化腳本</li>
-                        <li>進階數據分析與運營優化</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ================= 內容 ================= -->
+<div class="content">
 
-    <section class="container my-5">
-        <h2 class="text-center mb-4">精選專案</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">Power BI 商業洞察</h5>
-                        <p class="card-text">利用 DAX 處理複雜邏輯，產出直觀的視覺化指標。</p>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiMzE1YTAwN2YtMmU2Mi00Zjg1LTkzODUtMmM4Y2ZlNmI3NGJkIiwidCI6IjNkZjkwZTM4LWMwODAtNDVjMi1iMDFkLTUwOTAxOGY2NmVmMCIsImMiOjEwfQ%3D%3D" class="btn btn-primary">進入 Power BI 專案</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">Streamlit 互動應用</h5>
-                        <p class="card-text">以 Python 打造的即時數據處理工具。</p>
-                        <a href="https://share.streamlit.io/user/chengshiang335-web" class="btn btn-success">進入 Streamlit 專案</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <h1>個人介紹</h1>
+
+    <table>
+        <tr>
+            <td>
+                <img src="assets/p1.jpg" class="profile">
+            </td>
+            <td style="padding-left:20px;">
+                <h2>勝翔</h2>
+                <p>資料分析 / 資料工程</p>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>自我簡介</h2>
+    <p>
+        您好，我是勝翔。出生於嘉義縣，目前與妻子定居台中，育有一子一女。<br>
+        在家庭與育兒過程中培養了耐心與責任感。<br><br>
+
+        畢業於正修科技大學電機工程系，具備 Unity3D、C#、單晶片8051、C語言、PLC 基礎。<br>
+        目前於職訓局進修「Python人工智慧與數據分析班」。
+    </p>
+
+    <hr>
+
+    <h2>技術能力</h2>
+
+    <span class="tag">Python（爬蟲 / 自動化）</span>
+    <span class="tag">SQL Server（ETL）</span>
+    <span class="tag">SSAS / SSRS</span>
+    <span class="tag">Power BI</span> 
+
+    <hr>
+
+    <h2>專題經驗</h2>
+
+    <div class="card">
+        <h3>大型數據資料分析（Power BI）</h3>
+
+        <p><b>專題名稱：</b>大型數據銷售分析與視覺化</p>
+
+        <p><b>內容：</b></p>
+        <ul>
+            <li>Power BI 儀表板建立</li>
+            <li>Star Schema 資料模型</li>
+            <li>KPI（營收 / 成長率 / 客戶分析）</li>
+        </ul>
+
+        <p><b>技術：</b>Power BI / SQL Server / Azure</p>
+
+        <p>
+            <a href="https://docs.google.com/presentation/d/1vKofcCD7jqhMZdQzVjEwo_z2RVMB3DxbIUQrxneBkX4/edit" target="_blank">
+                PPT 簡報
+            </a>
+        </p>
+
+        <p>
+            <a href="https://app.powerbi.com/view?r=eyJrIjoiNWM4NjQzNTEtMjEyYS00MjI2LThiMmUtMmVhNTM5NjhmZjI1IiwidCI6IjQ3N2JmZWFhLTUyOTEtNGY4My04YjE0LTAzMWMzMDljZDExNyJ9" target="_blank">
+                Power BI Dashboard
+            </a>
+        </p>
+    </div>
+
+    <hr>
+
+    <h2>即時新聞爬蟲 + 情感分析</h2>
+    <div class="card">
+        <ul>
+            <li>每 5 分鐘抓取新聞</li>
+            <li>Azure SQL Database 儲存</li>
+            <li>LINE 即時推播</li>
+            <li>NLP 情感分析（正負向）</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <h2>工作經歷摘要</h2>
+
+    <div class="card">
+        <b>凌發科技（Unity 組長）</b><br>
+        - 博弈平台開發 / 專案管理
+    </div>
+
+    <div class="card">
+        <b>網銀國際（資深工程師）</b><br>
+        - Unity 手機遊戲開發 / Client 主程
+    </div>
+
+    <hr>
+
+    <h2>職涯理念</h2>
+    <p>
+        重視實作與成果，持續優化系統與流程，<br>
+        希望在資料分析與工程領域創造價值。
+    </p>
+
+</div>
+
 </body>
 </html>
