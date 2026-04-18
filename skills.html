@@ -2,7 +2,8 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<title>技能</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>專業技能 - 勝翔</title>
 
 <style>
 /* --- 基礎設定 --- */
@@ -12,29 +13,22 @@ body {
     background: #0e1117;
     color: white;
     display: flex;
-    flex-direction: column; /* 手機版：垂直堆疊（導覽在上、內容在下） */
+    flex-direction: column; /* 手機版：垂直堆疊 */
 }
 
 /* --- 導覽列 RWD --- */
 .sidebar {
-    width: 100%; /* 手機版：寬度 100% */
+    width: 100%;
     background: #111827;
     padding: 15px;
     box-sizing: border-box;
-    position: relative;
     border-bottom: 1px solid #1f2937;
 }
 
-.sidebar h3 {
-    margin: 0 0 10px 0;
-    text-align: center;
-    font-size: 1.2rem;
-}
-
 .nav-links {
-    display: flex; /* 手機版：橫向排隊 */
+    display: flex; /* 手機版：橫向排列 */
     justify-content: center;
-    flex-wrap: wrap; /* 連結太多時自動換行 */
+    flex-wrap: wrap; 
     gap: 8px;
 }
 
@@ -52,46 +46,29 @@ body {
     background: #374151;
 }
 
-/* --- 主內容 RWD --- */
+/* --- 主內容 --- */
 .content {
     padding: 20px;
-    max-width: 100%;
     box-sizing: border-box;
 }
 
-.profile {
-    width: 120px; /* 手機版圖片縮小 */
-    border-radius: 12px;
-    display: block;
-    margin: 0 auto; /* 手機版置中 */
-}
-
-.info-table {
-    width: 100%;
-}
-
-/* --- 桌機版佈局：寬度大於 768px 時觸發 --- */
+/* --- 桌機版佈局 (螢幕寬度 > 768px) --- */
 @media (min-width: 768px) {
     body {
-        flex-direction: row; /* 桌機版：改為左右排列 */
+        flex-direction: row; /* 桌機：左右排列 */
     }
 
     .sidebar {
         width: 220px;
         height: 100vh;
-        position: fixed; /* 固定在左側 */
+        position: fixed;
         padding: 40px 20px;
         border-bottom: none;
         border-right: 1px solid #1f2937;
     }
 
-    .sidebar h3 {
-        text-align: left;
-        margin-bottom: 20px;
-    }
-
     .nav-links {
-        display: block; /* 桌機版：連結恢復垂直排列 */
+        display: block; /* 桌機：垂直排列 */
     }
 
     .sidebar a {
@@ -101,58 +78,78 @@ body {
         font-size: 16px;
     }
 
-    .sidebar a:hover {
-        background: #1f2937;
-    }
-
     .content {
-        margin-left: 240px; /* 留出左側導覽的寬度 */
+        margin-left: 240px; 
         padding: 40px;
         max-width: 900px;
     }
-
-    .profile {
-        width: 200px; /* 桌機版圖片恢復大圖 */
-        margin: 0;
-    }
-
-    .header-flex {
-        display: flex;
-        align-items: center;
-    }
 }
 
-/* --- 通用元件樣式 --- */
-hr { border: 0; border-top: 1px solid #333; margin: 25px 0; }
-.tag { display: inline-block; background: #1f2937; padding: 6px 10px; margin: 4px; border-radius: 6px; font-size: 13px; }
-.card { background: #161b22; padding: 15px; border-radius: 10px; margin-top: 10px; border: 1px solid #30363d; }
-a { color: #58a6ff; text-decoration: none; }
-a:hover { text-decoration: underline; }
-ul { padding-left: 20px; }
-li { margin-bottom: 8px; }
+/* --- 技能專用樣式 --- */
+.skill-group {
+    margin-bottom: 30px;
+}
+.skill-title {
+    color: #58a6ff;
+    border-left: 4px solid #58a6ff;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+.tag { 
+    display: inline-block; 
+    background: #1f2937; 
+    padding: 8px 14px; 
+    margin: 5px; 
+    border-radius: 6px; 
+    font-size: 14px; 
+    border: 1px solid #30363d;
+}
+.card { 
+    background: #161b22; 
+    padding: 20px; 
+    border-radius: 10px; 
+    border: 1px solid #30363d; 
+}
 </style>
-
 </head>
 
 <body>
 
 <div class="sidebar">
-    <a href="index.html">個人介紹</a>
-    <a href="education.html">學歷</a>
-    <a href="experience.html">經歷</a>
-    <a href="skills.html">技能</a>
+    <div class="nav-links">
+        <a href="index.html">個人介紹</a>
+        <a href="education.html">學歷</a>
+        <a href="experience.html">經歷</a>
+        <a href="skills.html">技能</a>
+    </div>
 </div>
 
 <div class="content">
+    <h1>專業技能</h1>
 
-    <h1>技能</h1>
+    <div class="card">
+        <div class="skill-group">
+            <h3 class="skill-title">數據開發與工程 (Data Engineering)</h3>
+            <span class="tag">Python (爬蟲 / 自動化腳本)</span>
+            <span class="tag">SQL Server (T-SQL)</span>
+            <span class="tag">ETL 流程設計</span>
+            <span class="tag">Azure SQL Database</span>
+        </div>
 
-    <span class="tag">Python</span>
-    <span class="tag">SQL Server</span>
-    <span class="tag">Power BI</span>
-    <span class="tag">SSAS</span>
-    <span class="tag">SSRS</span>
+        <div class="skill-group">
+            <h3 class="skill-title">商業智慧與視覺化 (Business Intelligence)</h3>
+            <span class="tag">Power BI (DAX / 資料建模)</span>
+            <span class="tag">SSAS (多維度分析)</span>
+            <span class="tag">SSRS (報表服務)</span>
+        </div>
 
+        <div class="skill-group" style="margin-bottom: 0;">
+            <h3 class="skill-title">遊戲開發與其他 (Other Skills)</h3>
+            <span class="tag">Unity3D / C#</span>
+            <span class="tag">NLP 情感分析基礎</span>
+            <span class="tag">PLC 程式控制</span>
+        </div>
+    </div>
 </div>
 
 </body>
