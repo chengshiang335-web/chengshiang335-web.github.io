@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>個人介紹 - 勝翔</title>
+<title>個人介紹 - 勝翔 (Seant Shing)</title>
 
 <style>
 /* --- 基礎設定 --- */
@@ -13,29 +13,22 @@ body {
     background: #0e1117;
     color: white;
     display: flex;
-    flex-direction: column; /* 手機版：垂直堆疊（導覽在上、內容在下） */
+    flex-direction: column;
 }
 
-/* --- 導覽列 RWD --- */
+/* --- 導覽列 --- */
 .sidebar {
-    width: 100%; /* 手機版：寬度 100% */
+    width: 100%;
     background: #111827;
     padding: 15px;
     box-sizing: border-box;
-    position: relative;
     border-bottom: 1px solid #1f2937;
 }
 
-.sidebar h3 {
-    margin: 0 0 10px 0;
-    text-align: center;
-    font-size: 1.2rem;
-}
-
 .nav-links {
-    display: flex; /* 手機版：橫向排隊 */
+    display: flex; 
     justify-content: center;
-    flex-wrap: wrap; /* 連結太多時自動換行 */
+    flex-wrap: wrap; 
     gap: 8px;
 }
 
@@ -46,100 +39,84 @@ body {
     border-radius: 6px;
     background: #1f2937;
     font-size: 14px;
-    transition: 0.3s;
 }
 
-.sidebar a:hover {
-    background: #374151;
-}
-
-/* --- 主內容 RWD --- */
+/* --- 主內容 --- */
 .content {
     padding: 20px;
-    max-width: 100%;
     box-sizing: border-box;
 }
 
+.header-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .profile {
-    width: 120px; /* 手機版圖片縮小 */
+    width: 150px;
+    border-radius: 50%;
+    border: 3px solid #58a6ff;
+    margin-bottom: 15px;
+}
+
+/* --- 元件樣式 --- */
+hr { border: 0; border-top: 1px solid #333; margin: 30px 0; }
+.card { 
+    background: #161b22; 
+    padding: 20px; 
+    border-radius: 10px; 
+    margin-top: 15px; 
+    border: 1px solid #30363d; 
+    line-height: 1.7;
+}
+.tag { 
+    display: inline-block; 
+    background: #238636; 
+    color: white;
+    padding: 4px 10px; 
+    margin: 2px; 
+    border-radius: 4px; 
+    font-size: 12px; 
+}
+.highlight { color: #58a6ff; font-weight: bold; }
+.exp-title { color: #58a6ff; font-size: 1.2rem; margin-bottom: 5px; display: block; }
+.exp-meta { color: #8b949e; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+
+/* --- 新增：專題圖片樣式 --- */
+.project-image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.project-image {
+    max-width: 500px; /* 電腦版最大寬度 */
+    width: 100%;       /* 手機版自動縮放 */
+    height: auto;
     border-radius: 12px;
-    display: block;
-    margin: 0 auto; /* 手機版置中 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    border: 2px solid #30363d;
 }
 
-.info-table {
-    width: 100%;
-}
-
-/* --- 桌機版佈局：寬度大於 768px 時觸發 --- */
+/* --- 桌機版佈局 --- */
 @media (min-width: 768px) {
-    body {
-        flex-direction: row; /* 桌機版：改為左右排列 */
-    }
-
-    .sidebar {
-        width: 220px;
-        height: 100vh;
-        position: fixed; /* 固定在左側 */
-        padding: 40px 20px;
-        border-bottom: none;
-        border-right: 1px solid #1f2937;
-    }
-
-    .sidebar h3 {
-        text-align: left;
-        margin-bottom: 20px;
-    }
-
-    .nav-links {
-        display: block; /* 桌機版：連結恢復垂直排列 */
-    }
-
-    .sidebar a {
-        display: block;
-        margin: 10px 0;
-        background: transparent;
-        font-size: 16px;
-    }
-
-    .sidebar a:hover {
-        background: #1f2937;
-    }
-
-    .content {
-        margin-left: 240px; /* 留出左側導覽的寬度 */
-        padding: 40px;
-        max-width: 900px;
-    }
-
-    .profile {
-        width: 200px; /* 桌機版圖片恢復大圖 */
-        margin: 0;
-    }
-
-    .header-flex {
-        display: flex;
-        align-items: center;
-    }
+    body { flex-direction: row; }
+    .sidebar { width: 220px; height: 100vh; position: fixed; padding: 40px 20px; border-right: 1px solid #1f2937; }
+    .nav-links { display: block; }
+    .sidebar a { display: block; margin: 10px 0; background: transparent; }
+    .content { margin-left: 240px; padding: 40px; max-width: 1000px; }
+    .header-flex { flex-direction: row; text-align: left; }
+    .profile { width: 180px; margin-right: 30px; margin-bottom: 0; }
 }
-
-/* --- 通用元件樣式 --- */
-hr { border: 0; border-top: 1px solid #333; margin: 25px 0; }
-.tag { display: inline-block; background: #1f2937; padding: 6px 10px; margin: 4px; border-radius: 6px; font-size: 13px; }
-.card { background: #161b22; padding: 15px; border-radius: 10px; margin-top: 10px; border: 1px solid #30363d; }
-a { color: #58a6ff; text-decoration: none; }
-a:hover { text-decoration: underline; }
-ul { padding-left: 20px; }
-li { margin-bottom: 8px; }
 </style>
 </head>
 
 <body>
 
 <div class="sidebar">
-    <h3>導覽</h3>
     <div class="nav-links">
-        <a href="index.html">個人介紹</a>
+        <a href="index.html" style="background: #1f2937;">個人介紹</a>
         <a href="education.html">學歷</a>
         <a href="experience.html">經歷</a>
         <a href="skills.html">技能</a>
@@ -147,20 +124,105 @@ li { margin-bottom: 8px; }
 </div>
 
 <div class="content">
-
     <div class="header-flex">
-        <img src="assets/p1.jpg" class="profile" alt="個人照">
-        <div style="padding: 20px 0 0 20px;">
-            <h1 style="margin:0;">勝翔</h1>
-            <p style="color:#8b949e; font-size: 1.2rem;">資料分析 / 資料工程</p>
+        <img src="assets/p1.jpg" class="profile" alt="勝翔">
+        <div>
+            <h1 style="margin:0;">勝翔 (Seant Shing)</h1>
+            <p style="font-size: 1.2rem; color: #8b949e;">資料工程師 | AI 數據分析 | 前資深遊戲開發組長</p>
+            <p>📍 現居台中市 ｜ 🌐 <a href="https://chengshiang335-web.github.io/" target="_blank">技術技能樹</a></p>
         </div>
     </div>
 
     <hr>
 
-    <h2>自我簡介</h2>
-    <p style="line-height: 1.6;">
-        您好，我是勝翔。出生於嘉義縣，目前與妻子定居台中，育有一子一女。<br>
-        在家庭與育兒過程中培養了耐心與責任感。<br><br>
+    <div class="card" style="border-left: 5px solid #238636;">
+        <h3 style="margin-top:0;">🚀 目前動態</h3>
+        <p>目前於職訓局進修 <span class="highlight">【Python人工智慧與數據分析班】</span>，預計 2026/04/23 結業。掌握技術包含 Python 爬蟲、SQL Server ETL、SSAS/SSRS 及 Power BI 資料分析。</p>
+    </div>
 
-        畢業於正修科技大學電機工程系，具備 Unity3D、C#、單晶片8
+    <hr>
+
+    <h2>近期開發專案 (做中學成果)</h2>
+    
+    <div class="card">
+        <h3>1. 大數據銷售分析 (Power BI)</h3>
+        <p><b>結訓專案：</b>針對大型銷售數據進行清洗與建模，建立 Star Schema 架構，產出營收 KPI、成長率及客戶行為分析儀表板。</p>
+        <div>
+            <span class="tag">Power BI</span>
+            <span class="tag">資料建模</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Star Schema</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>2. 美國總統動態即時監控系統 (BI + AI 整合)</h3>
+        <p><b>個人練功小專題：</b>為了掌握即時趨勢消息，我建立了一個全自動化的數據處理流程：</p>
+        <ul>
+            <li>使用 <span class="highlight">Python</span> 每 5 分鐘自動爬取美國總統相關新聞。</li>
+            <li>資料即時寫入 <span class="highlight">Azure SQL Database</span>。</li>
+            <li>針對新聞標題進行 <span class="highlight">NLP 情感分析</span>，預判消息正負向。</li>
+            <li>串接 <span class="highlight">LINE Notify</span> 進行即時推播，確保訊息不錯過。</li>
+        </ul>
+        
+        <div class="project-image-container">
+            <p style="color: #8b949e; font-size: 0.9rem; margin-bottom: 5px;">【實測成果】LINE 群組接收與智慧手錶同步推播</p>
+            <img src="assets/line1.jpg" class="project-image" alt="LINE 新聞推播與智慧手錶成果展示">
+        </div>
+        
+        <div>
+            <span class="tag">Python 爬蟲</span>
+            <span class="tag">Azure SQL</span>
+            <span class="tag">LINE Notify 即時推播</span>
+            <span class="tag">NLP 情感分析</span>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>關於我</h2>
+    <p>
+        您好，我是勝翔。出生於嘉義，目前與妻子定居台中，育有一子一女。享受育兒生活，隨著孩子一起成長是父母最大的回饋。電機工程背景出發，擁有 <span class="highlight">單晶片8051、C語言、PLC</span> 深厚基礎。曾擔任陸軍義務役通訊士官班長，培養了嚴謹紀律與領導經驗。熱衷於將複雜問題化繁為簡，希望從喜歡程式轉變為主動思考產品價值的核心開發者。
+    </p>
+
+    <hr>
+
+    <h2>工作經歷</h2>
+
+    <div class="card">
+        <span class="exp-title">凌發科技 ｜ Unity 主任 / 組長</span>
+        <span class="exp-meta">2020/05 ~ 2025/07</span>
+        <ul>
+            <li>主導 Unity3D 博奕遊戲包網平台開發。協助導入 <span class="tag">Addressable Bundle</span> 技術架構。</li>
+            <li>負責元宇宙專案（知名銀行合作）及直播系統開發。</li>
+            <li>管理美術與程式團隊進度控管。</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <span class="exp-title">網銀國際 ｜ 資深組長 / 軟體工程師</span>
+        <span class="exp-meta">2012/04 ~ 2020/04</span>
+        <ul>
+            <li>擔任《世界大亨》Client 端主程，負責雙平台發佈、框架維護與效能優化。曾獲技術研發久任獎金。</li>
+            <li>參與《星城Online》、《勇士2014》等知名專案開發。</li>
+            <li>串接 Facebook 數據分析 API。</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <span class="exp-title">其他經歷 ｜ 韌體與應用工程師</span>
+        <span class="exp-meta">早期經歷 (海德威 / 博敦 / 鼎威 / 奇美電子)</span>
+        <p style="font-size: 0.9rem;">涵蓋工業蛇管韌體、2.4G RF Protocol 撰寫、監控系統 PCB Layout。豐富的底層開發經驗奠定了穩健的邏輯思維。</p>
+    </div>
+
+    <hr>
+
+    <h2>職涯理念</h2>
+    <blockquote style="font-style: italic; color: #8b949e; border-left: 4px solid #30363d; padding-left: 20px;">
+        「在每個階段都是特別的經歷，從上手熟悉到化繁為簡隨時充滿挑戰。我認為不管身處在什麼產業都應該要認真做好。很幸運能從事自己喜歡的程式工作，並期待在數據分析領域創造下一個價值。」
+    </blockquote>
+
+</div>
+
+</body>
+</html>
