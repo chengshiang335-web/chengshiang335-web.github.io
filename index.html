@@ -3,197 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>個人介紹</title>
+<title>個人介紹 - 勝翔</title>
 
 <style>
+/* --- 基礎設定 --- */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Microsoft JhengHei", Arial, sans-serif;
     background: #0e1117;
     color: white;
     display: flex;
+    flex-direction: column; /* 手機版：垂直堆疊（導覽在上、內容在下） */
 }
 
-/* 左側導覽 */
+/* --- 導覽列 RWD --- */
 .sidebar {
-    width: 220px;
+    width: 100%; /* 手機版：寬度 100% */
     background: #111827;
-    height: 100vh;
-    padding: 20px;
-    position: fixed;
+    padding: 15px;
+    box-sizing: border-box;
+    position: relative;
+    border-bottom: 1px solid #1f2937;
 }
 
 .sidebar h3 {
-    margin-bottom: 15px;
+    margin: 0 0 10px 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex; /* 手機版：橫向排隊 */
+    justify-content: center;
+    flex-wrap: wrap; /* 連結太多時自動換行 */
+    gap: 8px;
 }
 
 .sidebar a {
-    display: block;
     color: white;
-    padding: 10px;
-    margin: 6px 0;
+    padding: 8px 12px;
     text-decoration: none;
     border-radius: 6px;
+    background: #1f2937;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
 .sidebar a:hover {
-    background: #1f2937;
+    background: #374151;
 }
 
-/* 主內容 */
+/* --- 主內容 RWD --- */
 .content {
-    margin-left: 240px;
-    padding: 40px;
-    max-width: 900px;
+    padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-/* 圖片 */
 .profile {
-    width: 200px;
+    width: 120px; /* 手機版圖片縮小 */
     border-radius: 12px;
+    display: block;
+    margin: 0 auto; /* 手機版置中 */
 }
 
-/* 分隔線 */
-hr {
-    border: 0;
-    border-top: 1px solid #333;
-    margin: 25px 0;
+.info-table {
+    width: 100%;
 }
 
-/* tag */
-.tag {
-    display: inline-block;
-    background: #1f2937;
-    padding: 6px 10px;
-    margin: 4px;
-    border-radius: 6px;
-    font-size: 13px;
+/* --- 桌機版佈局：寬度大於 768px 時觸發 --- */
+@media (min-width: 768px) {
+    body {
+        flex-direction: row; /* 桌機版：改為左右排列 */
+    }
+
+    .sidebar {
+        width: 220px;
+        height: 100vh;
+        position: fixed; /* 固定在左側 */
+        padding: 40px 20px;
+        border-bottom: none;
+        border-right: 1px solid #1f2937;
+    }
+
+    .sidebar h3 {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .nav-links {
+        display: block; /* 桌機版：連結恢復垂直排列 */
+    }
+
+    .sidebar a {
+        display: block;
+        margin: 10px 0;
+        background: transparent;
+        font-size: 16px;
+    }
+
+    .sidebar a:hover {
+        background: #1f2937;
+    }
+
+    .content {
+        margin-left: 240px; /* 留出左側導覽的寬度 */
+        padding: 40px;
+        max-width: 900px;
+    }
+
+    .profile {
+        width: 200px; /* 桌機版圖片恢復大圖 */
+        margin: 0;
+    }
+
+    .header-flex {
+        display: flex;
+        align-items: center;
+    }
 }
 
-/* card */
-.card {
-    background: #161b22;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 10px;
-}
+/* --- 通用元件樣式 --- */
+hr { border: 0; border-top: 1px solid #333; margin: 25px 0; }
+.tag { display: inline-block; background: #1f2937; padding: 6px 10px; margin: 4px; border-radius: 6px; font-size: 13px; }
+.card { background: #161b22; padding: 15px; border-radius: 10px; margin-top: 10px; border: 1px solid #30363d; }
+a { color: #58a6ff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { padding-left: 20px; }
+li { margin-bottom: 8px; }
 </style>
 </head>
 
 <body>
 
-<!-- ================= 左側導覽 ================= -->
 <div class="sidebar">
     <h3>導覽</h3>
-    <a href="index.html">個人介紹</a>
-    <a href="education.html">學歷</a>
-    <a href="experience.html">經歷</a>
-    <a href="skills.html">技能</a>
+    <div class="nav-links">
+        <a href="index.html">個人介紹</a>
+        <a href="education.html">學歷</a>
+        <a href="experience.html">經歷</a>
+        <a href="skills.html">技能</a>
+    </div>
 </div>
 
-<!-- ================= 內容 ================= -->
 <div class="content">
 
-    <h1>個人介紹</h1>
-
-    <table>
-        <tr>
-            <td>
-                <img src="assets/p1.jpg" class="profile">
-            </td>
-            <td style="padding-left:20px;">
-                <h2>勝翔</h2>
-                <p>資料分析 / 資料工程</p>
-            </td>
-        </tr>
-    </table>
+    <div class="header-flex">
+        <img src="assets/p1.jpg" class="profile" alt="個人照">
+        <div style="padding: 20px 0 0 20px;">
+            <h1 style="margin:0;">勝翔</h1>
+            <p style="color:#8b949e; font-size: 1.2rem;">資料分析 / 資料工程</p>
+        </div>
+    </div>
 
     <hr>
 
     <h2>自我簡介</h2>
-    <p>
+    <p style="line-height: 1.6;">
         您好，我是勝翔。出生於嘉義縣，目前與妻子定居台中，育有一子一女。<br>
         在家庭與育兒過程中培養了耐心與責任感。<br><br>
 
-        畢業於正修科技大學電機工程系，具備 Unity3D、C#、單晶片8051、C語言、PLC 基礎。<br>
-        目前於職訓局進修「Python人工智慧與數據分析班」。
-    </p>
-
-    <hr>
-
-    <h2>技術能力</h2>
-
-    <span class="tag">Python（爬蟲 / 自動化）</span>
-    <span class="tag">SQL Server（ETL）</span>
-    <span class="tag">SSAS / SSRS</span>
-    <span class="tag">Power BI</span> 
-
-    <hr>
-
-    <h2>專題經驗</h2>
-
-    <div class="card">
-        <h3>大型數據資料分析（Power BI）</h3>
-
-        <p><b>專題名稱：</b>大型數據銷售分析與視覺化</p>
-
-        <p><b>內容：</b></p>
-        <ul>
-            <li>Power BI 儀表板建立</li>
-            <li>Star Schema 資料模型</li>
-            <li>KPI（營收 / 成長率 / 客戶分析）</li>
-        </ul>
-
-        <p><b>技術：</b>Power BI / SQL Server / Azure</p>
-
-        <p>
-            <a href="https://docs.google.com/presentation/d/1vKofcCD7jqhMZdQzVjEwo_z2RVMB3DxbIUQrxneBkX4/edit" target="_blank">
-                PPT 簡報
-            </a>
-        </p>
-
-        <p>
-            <a href="https://app.powerbi.com/view?r=eyJrIjoiNWM4NjQzNTEtMjEyYS00MjI2LThiMmUtMmVhNTM5NjhmZjI1IiwidCI6IjQ3N2JmZWFhLTUyOTEtNGY4My04YjE0LTAzMWMzMDljZDExNyJ9" target="_blank">
-                Power BI Dashboard
-            </a>
-        </p>
-    </div>
-
-    <hr>
-
-    <h2>即時新聞爬蟲 + 情感分析</h2>
-    <div class="card">
-        <ul>
-            <li>每 5 分鐘抓取新聞</li>
-            <li>Azure SQL Database 儲存</li>
-            <li>LINE 即時推播</li>
-            <li>NLP 情感分析（正負向）</li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <h2>工作經歷摘要</h2>
-
-    <div class="card">
-        <b>凌發科技（Unity 組長）</b><br>
-        - 博弈平台開發 / 專案管理
-    </div>
-
-    <div class="card">
-        <b>網銀國際（資深工程師）</b><br>
-        - Unity 手機遊戲開發 / Client 主程
-    </div>
-
-    <hr>
-
-    <h2>職涯理念</h2>
-    <p>
-        重視實作與成果，持續優化系統與流程，<br>
-        希望在資料分析與工程領域創造價值。
-    </p>
-
-</div>
-
-</body>
-</html>
+        畢業於正修科技大學電機工程系，具備 Unity3D、C#、單晶片8
